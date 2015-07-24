@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QRCodeScanner.h"
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic,strong) IBOutlet UIView *qrcodeScanner;
 
 @end

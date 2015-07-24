@@ -13,6 +13,8 @@ static AVCaptureSession *captureSession;
 static AVCaptureVideoPreviewLayer *videoPreviewLayer;
 static BOOL _isReading=NO;
 UIImageView *lineImgae;
+UIView *scanner;
+UIView *scanView;
 CGRect boundaryRect;
 +(BOOL)startStopReading:(id) controller View:(UIView *) view
 {
@@ -31,9 +33,13 @@ CGRect boundaryRect;
     }else{
         return [self StartReadingWithView:view Controller:controller];
     }
+    
 }
 
 +(void)StopReading{
+    [scanner removeFromSuperview];
+    [scanView removeFromSuperview];
+    [lineImgae removeFromSuperview];
     [captureSession stopRunning];
     captureSession=nil;
     [videoPreviewLayer removeFromSuperlayer];
@@ -41,7 +47,7 @@ CGRect boundaryRect;
 }
 
 +(BOOL)StartReadingWithView:(UIView *)view Controller:(id) controller{
-    UIView *scanner=[[UIView alloc]initWithFrame:view.frame];
+    scanner=[[UIView alloc]initWithFrame:view.frame];
     scanner.center=view.center;
     [view addSubview:scanner];
     [self AddScanImageView:view];
@@ -90,7 +96,7 @@ CGRect boundaryRect;
     return YES;
 }
 +(void)AddScanImageView:(UIView *)view{
-    UIView *scanView=[[UIView alloc]initWithFrame:view.frame];
+    scanView=[[UIView alloc]initWithFrame:view.frame];
     [[view superview] addSubview:scanView];
     
     

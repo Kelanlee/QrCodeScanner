@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-
+bool isReading=false;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -25,7 +25,29 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
 
-    [QRCodeScanner startStopReading:self View:self.qrcodeScanner];
+    isReading=[QRCodeScanner startStopReading:self View:self.qrcodeScanner];
+}
+-(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
+{
+    if (metadataObjects!=nil&&[metadataObjects count]>0) {
+        AVMetadataMachineReadableCodeObject *metadataObj=[metadataObjects objectAtIndex:0];
+        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode])
+        {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                if (isReading) {
+                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"QR Message" message:[metadataObj stringValue] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+                    [alert show];
+                    isReading=[QRCodeScanner startStopReading:self View:self.qrcodeScanner];
+                    
+                }
+                
+            });
+        }
+    }
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    isReading=[QRCodeScanner startStopReading:self View:self.qrcodeScanner];
 }
 
 @end

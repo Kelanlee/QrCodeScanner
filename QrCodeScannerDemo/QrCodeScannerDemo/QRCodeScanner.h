@@ -11,6 +11,5 @@
 #import <AVFoundation/AVFoundation.h>
 @interface QRCodeScanner : NSObject
 +(BOOL)startStopReading:(id) controller View:(UIView *) view;
-+(BOOL)startStopReading:(id) controller View:(UIView *) view ScanFrame:(CGRect)rect;
 +(void)StopReading;
 @end

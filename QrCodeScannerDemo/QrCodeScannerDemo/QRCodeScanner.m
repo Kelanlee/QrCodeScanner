@@ -26,16 +26,6 @@ CGRect boundaryRect;
     }
 }
 
-+(BOOL)startStopReading:(id) controller View:(UIView *) view ScanFrame:(CGRect)rect{
-    if (_isReading) {
-        [self StopReading];
-        return NO;
-    }else{
-        return [self StartReadingWithView:view Controller:controller];
-    }
-    
-}
-
 +(void)StopReading{
     [scanner removeFromSuperview];
     [scanView removeFromSuperview];

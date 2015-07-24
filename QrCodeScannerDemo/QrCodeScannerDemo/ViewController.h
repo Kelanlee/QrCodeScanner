@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "QRCodeScanner.h"
 @interface ViewController : UIViewController
-
+@property (nonatomic,strong) IBOutlet UIView *qrcodeScanner;
 
 @end
 

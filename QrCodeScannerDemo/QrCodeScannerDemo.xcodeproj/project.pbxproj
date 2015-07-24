@@ -14,6 +14,7 @@
 		80FEF2951B61EE31009A4BED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80FEF2941B61EE31009A4BED /* Images.xcassets */; };
 		80FEF2981B61EE31009A4BED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FEF2961B61EE31009A4BED /* LaunchScreen.xib */; };
 		80FEF2A41B61EE31009A4BED /* QrCodeScannerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FEF2A31B61EE31009A4BED /* QrCodeScannerDemoTests.m */; };
+		80FEF2B11B61EF32009A4BED /* QRCodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FEF2B01B61EF32009A4BED /* QRCodeScanner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		80FEF29D1B61EE31009A4BED /* QrCodeScannerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QrCodeScannerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FEF2A21B61EE31009A4BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80FEF2A31B61EE31009A4BED /* QrCodeScannerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QrCodeScannerDemoTests.m; sourceTree = "<group>"; };
+		80FEF2AF1B61EF32009A4BED /* QRCodeScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScanner.h; sourceTree = "<group>"; };
+		80FEF2B01B61EF32009A4BED /* QRCodeScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				80FEF2941B61EE31009A4BED /* Images.xcassets */,
 				80FEF2961B61EE31009A4BED /* LaunchScreen.xib */,
 				80FEF2871B61EE31009A4BED /* Supporting Files */,
+				80FEF2AF1B61EF32009A4BED /* QRCodeScanner.h */,
+				80FEF2B01B61EF32009A4BED /* QRCodeScanner.m */,
 			);
 			path = QrCodeScannerDemo;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			files = (
 				80FEF2901B61EE31009A4BED /* ViewController.m in Sources */,
 				80FEF28D1B61EE31009A4BED /* AppDelegate.m in Sources */,
+				80FEF2B11B61EF32009A4BED /* QRCodeScanner.m in Sources */,
 				80FEF28A1B61EE31009A4BED /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,5 +23,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewDidAppear:(BOOL)animated{
+
+    [QRCodeScanner startStopReading:self View:self.qrcodeScanner];
+}
 
 @end
